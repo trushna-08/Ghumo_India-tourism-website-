@@ -1,0 +1,731 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    color: #333;
+}
+
+/* Tailwind-like utility classes */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.md\:grid-cols-2 {
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.lg\:grid-cols-3 {
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.gap-6 {
+    gap: 1.5rem;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.w-12 {
+    width: 3rem;
+}
+
+.h-12 {
+    height: 3rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.mr-4 {
+    margin-right: 1rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-gray-600 {
+    color: #4b5563;
+}
+
+.text-gray-700 {
+    color: #374151;
+}
+
+.bg-gray-100 {
+    background-color: #f3f4f6;
+}
+
+/* Custom class for tourism review cards */
+.tourism-review-card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tourism-review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px -5px rgb(0 0 0 / 0.2);
+}
+
+/* Destinations Section */
+.destinations {
+    position: relative;
+    /* Push section below the video */
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent white */
+    text-align: center;
+}
+
+.destinations h2 {
+    font-size: 5rem;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: bold;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.destination-card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 250px;
+    /* Increased height */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.destination-card p {
+    font-size: 1.5rem;
+    /* Increased font size */
+    color: #333;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+}
+
+.wcu-section {
+    background-color: #f9fbfe;
+}
+
+.wcu-section-heading {
+    color: #183b56;
+    font-family: "Roboto";
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.wcu-section-description {
+    color: #5a7184;
+    font-family: "Roboto";
+    font-size: 12px;
+}
+
+.wcu-card {
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e5eaf4;
+    border-radius: 16px;
+}
+
+.wcu-card-image {
+    width: 75px;
+    height: 80px;
+    font-size: 50px;
+    padding: 10px;
+}
+
+.wcu-card-title {
+    color: #323f4b;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.wcu-card-description {
+    color: #7b8794;
+    font-family: "Roboto";
+    font-size: 12px;
+}
+
+.offers {
+    color: #323f4b;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.follow-us-heading {
+    color: #222222;
+    font-family: Playfair Display SC;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.follow-us-image-bg {
+    background-color: #faf7e8;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d0b200;
+}
+
+.follow-us-image {
+    font-size: 30px;
+    color: #222222;
+    height: 30px;
+    width: 30px;
+    margin-left: 6px;
+}
+
+.horizontal-line {
+    border: none;
+    height: 1px;
+    color: red;
+    background-color: #222222;
+    width: 90%;
+}
+
+.footer {
+    background-color: #282c34;
+    color: #fff;
+    padding: 40px 0;
+    width: 100%;
+
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+.footer-section {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.footer-brand {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.footer-copyright {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 3px;
+}
+
+.footer-links a {
+    font-size: 0.8rem;
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+}
+
+.footer-social a {
+    width: 25px;
+    height: 25px;
+    margin-right: 7px;
+    border-radius: 50%;
+    background-color: #7e57c2;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.footer-social a:hover {
+    background-color: #673ab7;
+}
+
+.footer-social i {
+    font-size: 0.8rem;
+}
+
+.gallery-section {
+
+    background-color: #222222;
+    color: #ffffff;
+    padding: 10px;
+}
+
+
+
+.gallery-iamge-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.gallery-container-image-1 {
+    margin: 5px;
+    height: 200px;
+    width: 400px;
+}
+
+.gallery-container-image-1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container-image-2 {
+    margin: 5px;
+    height: 200px;
+    width: 300px;
+}
+
+.gallery-container-image-2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container-image-3 {
+    margin: 5px;
+    height: 200px;
+    width: 400px;
+}
+
+.gallery-container-image-3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container-image-4 {
+    margin: 5px;
+    height: 200px;
+    width: 350px;
+}
+
+.gallery-container-image-4:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container-image-5 {
+    margin: 5px;
+    height: 200px;
+    width: 500px;
+}
+
+.gallery-container-image-5:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container-image-6 {
+    margin: 5px;
+    height: 200px;
+    width: 350px;
+}
+
+.gallery-container-image-6:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container-image-7 {
+    margin: 5px;
+    height: 200px;
+    width: 300px;
+}
+
+.gallery-container-image-7:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-container-image-8 {
+    margin: 5px;
+    height: 200px;
+    width: 300px;
+}
+
+.gallery-container-image-8:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.bg-image-container-detailed-page {
+    background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/ccbp-static-website/seabg.png");
+    height: 120vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading-detailed {
+    font-family: Roboto;
+    font-size: 40px;
+    color: white;
+    padding: 20px;
+    margin: 5px;
+    margin-top: 90px;
+    font-weight: bold;
+}
+
+.detailed-view-main-card {
+    margin: 18px;
+}
+
+.text-card {
+    background-color: white;
+    padding: 6px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.card-heading {
+    padding: 4px;
+    color: #0f0e46;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.discription {
+    padding: 4px;
+    color: #6c6b70;
+    font-family: Roboto;
+}
+
+@media(min-width:768px) {
+    .carousel {
+        width: 60vw;
+    }
+
+    .text-card {
+        width: 60vw;
+        max-width: 60vw;
+    }
+
+    .carausel-image {
+        height: 350px;
+        width: 400px;
+    }
+}
+
+.container-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 500px;
+    margin: 30px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select,
+input,
+button {
+    width: 100%;
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-form:hover {
+    background-color: #218838;
+}
+
+.login-body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    height: 100vh;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 350px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.signup-field {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.signup-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.signup-field input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Input focus effect */
+.signup-field input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+    outline: none;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.signup-btn:hover {
+    background-color: #218838;
+}
+
+/* Mobile Optimization */
+@media (max-width: 400px) {
+    .signup-box {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+.profile-icon-container {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background: none !important;
+    /* Removes any background */
+    border: none;
+    /* Removes any border */
+    opacity: 0;
+    /* Makes it fully transparent */
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 0.5;
+    /* Slightly visible when hovered */
+}
+
+/* ======== HOVER EFFECTS ======== */
+
+/* Navbar Links Hover Effect */
+.navbar-nav .nav-link:hover {
+    color: #ffa500 !important; /* Orange color on hover */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.btn-success:hover {
+    background-color: #28a745;
+    opacity: 0.8;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+    background-color: #dc3545;
+    opacity: 0.8;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Destination Cards Hover Effect */
+.destination-card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Package Cards Hover Effect */
+.card:hover {
+    transform: translateY(-10px); /* Lift the card up */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Gallery Image Hover Effect */
+.gallery-container-image-1:hover,
+.gallery-container-image-2:hover,
+.gallery-container-image-3:hover,
+.gallery-container-image-4:hover,
+.gallery-container-image-5:hover,
+.gallery-container-image-6:hover,
+.gallery-container-image-7:hover,
+.gallery-container-image-8:hover {
+    transform: scale(1.1); /* Zoom effect */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Footer Social Icons Hover Effect */
+.footer-social a:hover {
+    background-color: #ff4500; /* Orange color on hover */
+    transition: background-color 0.3s ease-in-out;
+}
